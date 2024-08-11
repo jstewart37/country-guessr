@@ -91,7 +91,7 @@ export function Guessor(props: Props) {
                         <Box component="img" className="country" src={`/${todaysCountry?.['Alpha-2 code'].toLowerCase()}.svg`} />
 
 
-                        <Grid container paddingTop={'10px'}>
+                        <Grid container paddingTop={'10px'} spacing={1}>
                             <Grid item xs={10} >
                                 <Autocomplete value={currentSelected}
                                     defaultValue={null}
@@ -105,17 +105,16 @@ export function Guessor(props: Props) {
                             <Grid item xs={2}>
                                 <Button variant='contained' disabled={!currentSelected} onClick={countrySelected}>Check</Button>
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} >
                                 <List>
                                     {guesses?.map(guess => {
-                                        return <ListItem>
+                                        return <ListItem sx={{ paddingLeft: '4px' }}>
                                             <ListItemIcon>
                                                 {guess.correct && <>
                                                     <CheckCircleIcon sx={{ color: 'green' }} />
                                                     <Link target="_blank" rel="noopener" href={getMapLink(guess.country)}>{guess.country.Country}</Link>
                                                 </>}
-                                                {!guess.correct && <><CancelIcon sx={{ color: 'red' }} />{guess.country.Country} ({guess.distance}km away) {getDirectionArrow(guess.radian)}</>}
-
+                                                {!guess.correct && <><CancelIcon sx={{ color: 'red' }} />{guess.country.Country} ({guess.distance}km away){` `}{getDirectionArrow(guess.radian)}</>}
                                             </ListItemIcon>
                                         </ListItem>
                                     })}
