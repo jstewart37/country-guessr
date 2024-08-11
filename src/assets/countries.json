@@ -928,14 +928,6 @@
         "Longitude (average)": 138
     },
     {
-        "Country": "Jersey",
-        "Alpha-2 code": "JE",
-        "Alpha-3 code": "JEY",
-        "Numeric code": 832,
-        "Latitude (average)": 49.21,
-        "Longitude (average)": -2.13
-    },
-    {
         "Country": "Jordan",
         "Alpha-2 code": "JO",
         "Alpha-3 code": "JOR",
@@ -982,15 +974,6 @@
         "Numeric code": 410,
         "Latitude (average)": 37,
         "Longitude (average)": 127.5
-    },
-    {
-        "Country": "Kosovo",
-        "Alpha-2 code": "XK",
-        "Alpha-3 code": "XKX",
-        "Numeric code": 95,
-        "Latitude (average)": 42.583333,
-        "Longitude (average)": 21,
-        "mapped": false
     },
     {
         "Country": "Kuwait",
@@ -1153,14 +1136,6 @@
         "Longitude (average)": 14.5833
     },
     {
-        "Country": "Marshall Islands",
-        "Alpha-2 code": "MH",
-        "Alpha-3 code": "MHL",
-        "Numeric code": 584,
-        "Latitude (average)": 9,
-        "Longitude (average)": 168
-    },
-    {
         "Country": "Martinique",
         "Alpha-2 code": "MQ",
         "Alpha-3 code": "MTQ",
@@ -1199,14 +1174,6 @@
         "Numeric code": 484,
         "Latitude (average)": 23,
         "Longitude (average)": -102
-    },
-    {
-        "Country": "Micronesia, Federated States of",
-        "Alpha-2 code": "FM",
-        "Alpha-3 code": "FSM",
-        "Numeric code": 583,
-        "Latitude (average)": 6.9167,
-        "Longitude (average)": 158.25
     },
     {
         "Country": "Moldova, Republic of",
@@ -1297,14 +1264,6 @@
         "Longitude (average)": 84
     },
     {
-        "Country": "Netherlands Antilles",
-        "Alpha-2 code": "AN",
-        "Alpha-3 code": "ANT",
-        "Numeric code": 530,
-        "Latitude (average)": 12.25,
-        "Longitude (average)": -68.75
-    },
-    {
         "Country": "Netherlands",
         "Alpha-2 code": "NL",
         "Alpha-3 code": "NLD",
@@ -1369,14 +1328,6 @@
         "Longitude (average)": 167.95
     },
     {
-        "Country": "Northern Mariana Islands",
-        "Alpha-2 code": "MP",
-        "Alpha-3 code": "MNP",
-        "Numeric code": 580,
-        "Latitude (average)": 15.2,
-        "Longitude (average)": 145.75
-    },
-    {
         "Country": "Norway",
         "Alpha-2 code": "NO",
         "Alpha-3 code": "NOR",
@@ -1407,14 +1358,6 @@
         "Numeric code": 585,
         "Latitude (average)": 7.5,
         "Longitude (average)": 134.5
-    },
-    {
-        "Country": "Palestinian Territory, Occupied",
-        "Alpha-2 code": "PS",
-        "Alpha-3 code": "PSE",
-        "Numeric code": 275,
-        "Latitude (average)": 32,
-        "Longitude (average)": 35.25
     },
     {
         "Country": "Panama",
@@ -1929,14 +1872,6 @@
         "Longitude (average)": -71.5833
     },
     {
-        "Country": "Tuvalu",
-        "Alpha-2 code": "TV",
-        "Alpha-3 code": "TUV",
-        "Numeric code": 798,
-        "Latitude (average)": -8,
-        "Longitude (average)": 178
-    },
-    {
         "Country": "Uganda",
         "Alpha-2 code": "UG",
         "Alpha-3 code": "UGA",
@@ -1967,14 +1902,6 @@
         "Numeric code": 826,
         "Latitude (average)": 54,
         "Longitude (average)": -2
-    },
-    {
-        "Country": "United States Minor Outlying Islands",
-        "Alpha-2 code": "UM",
-        "Alpha-3 code": "UMI",
-        "Numeric code": 581,
-        "Latitude (average)": 19.2833,
-        "Longitude (average)": 166.6
     },
     {
         "Country": "United States",
