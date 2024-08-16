@@ -1,28 +1,28 @@
 import { East, North, NorthEast, NorthWest, South, SouthEast, SouthWest, West } from "@mui/icons-material"
+import { CompassDirection } from "./geoutils"
 
-export const getDirectionArrow = (degrees: number) => {
-    if (degrees >= 337.5 || degrees < 22.5) {
+export const getDirectionArrow = (direction?: CompassDirection) => {
+    if (direction === "NNW" || direction === 'N' || direction === 'NNE') {
         return <North />
-    } else if (degrees >= 22.5 && degrees < 67.5) {
+    } else if (direction === 'ENE' || direction === 'NE') {
         return <NorthEast />
     }
-    else if (degrees >= 67.5 && degrees < 112.5) {
+    else if (direction === 'E' || direction === 'ESE') {
         return <East />
     }
-    else if (degrees >= 112.5 && degrees < 157.5) {
+    else if (direction === 'SE') {
         return <SouthEast />
     }
-    else if (degrees >= 157.5 && degrees < 202.5) {
+    else if (direction === 'SSE' || direction === 'S' || direction === 'SSW') {
         return <South />
     }
-    else if (degrees >= 202.5 && degrees < 247.5) {
+    else if (direction === 'SW' || direction === 'WSW') {
         return <SouthWest />
     }
-    else if (degrees >= 247.5 && degrees < 292.5) {
+    else if (direction === 'W' || direction === 'WNW') {
         return <West />
     }
-    else if (degrees >= 292.5 && degrees < 337.5) {
+    else if (direction === 'NW') {
         return <NorthWest />
     }
-
 }

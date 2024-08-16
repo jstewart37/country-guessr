@@ -7,12 +7,10 @@ import { Autocomplete, Box, Button, Grid, Link, List, ListItem, ListItemIcon, Te
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 
-import haversineDistance from 'haversine-distance'
-
 import Confetti from 'react-confetti-boom'
-import { bearing } from './utils/radian'
 import { getDirectionArrow } from './components/directions'
 import { getMapLink } from './utils/map';
+import { CompassDirection, getDistanceAndDirection } from './components/geoutils';
 
 
 export interface Country {
@@ -27,7 +25,7 @@ export interface Country {
 interface Guesses {
     correct: boolean
     distance: number
-    radian: number
+    direction: CompassDirection | undefined
     country: Country
 }
 
@@ -52,8 +50,8 @@ export function Guessor(props: Props) {
                 const correctGuess: Guesses = {
                     correct: true,
                     distance: 0,
-                    radian: 0,
-                    country: currentSelected
+                    country: currentSelected,
+                    direction: undefined
                 }
                 alert('Congrats. Clever')
                 setGuesses([correctGuess, ...guesses])
@@ -61,21 +59,20 @@ export function Guessor(props: Props) {
                 setCorrect(true)
             }
             else {
-                const distanceKM = Math.floor(haversineDistance(
-                    { lat: currentSelected?.['Latitude (average)'], lon: currentSelected?.['Longitude (average)'] },
-                    { lat: todaysCountry['Latitude (average)'], lon: currentSelected?.['Longitude (average)'] }) / 1000)
-
-                const degrees = bearing(currentSelected?.['Latitude (average)'], currentSelected?.['Longitude (average)'], todaysCountry['Latitude (average)'], todaysCountry?.['Longitude (average)'])
+                const distanceCompass = getDistanceAndDirection(
+                    currentSelected?.['Latitude (average)'],
+                    currentSelected?.['Longitude (average)'],
+                    todaysCountry['Latitude (average)'],
+                    todaysCountry['Longitude (average)']
+                )
 
                 const invalidGuess: Guesses = {
                     correct: false,
-                    distance: distanceKM,
-                    radian: degrees,
+                    distance: Math.floor(distanceCompass.distanceMeters / 1000),
+                    direction: distanceCompass.compassDirection,
                     country: currentSelected
                 }
                 setGuesses([invalidGuess, ...guesses])
-
-                // alert(`You are ${distanceKM} km away (${degrees} ${degreesArrow(degrees)})`)
                 setCorrect(false)
 
             }
@@ -114,7 +111,7 @@ export function Guessor(props: Props) {
                                                     <CheckCircleIcon sx={{ color: 'green' }} />
                                                     <Link target="_blank" rel="noopener" href={getMapLink(guess.country)}>{guess.country.Country}</Link>
                                                 </>}
-                                                {!guess.correct && <><CancelIcon sx={{ color: 'red' }} />{guess.country.Country} ({guess.distance}km away){` `}{getDirectionArrow(guess.radian)}</>}
+                                                {!guess.correct && <><CancelIcon sx={{ color: 'red' }} />{guess.country.Country} ({guess.distance}km away){` `}{getDirectionArrow(guess.direction)}</>}
                                             </ListItemIcon>
                                         </ListItem>
                                     })}

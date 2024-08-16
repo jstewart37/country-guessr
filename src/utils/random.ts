@@ -2,9 +2,7 @@ import Srand from 'seeded-rand'
 
 export const getDailyRandomNumber = () => {
     const now = new Date();
-    const tz_epoch_ms = now.valueOf() - now.getTimezoneOffset() * 60 * 1000;
-    const epoch_days = tz_epoch_ms / (24 * 60 * 60 * 1000);
-    return epoch_days
+    return `${now.getDate()}${now.getMonth()}${now.getFullYear()}`
 }
 
 export const seedRand = (seed: string | number, range: number[]): number => {
