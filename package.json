@@ -14,14 +14,19 @@
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
     "@mui/material": "^5.16.7",
-    "geoutils": "^0.1.0",
+    "geolib": "^3.3.4",
     "preact": "^10.23.1",
     "react-confetti-boom": "^1.0.0",
     "seeded-rand": "^2.0.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
     "@preact/preset-vite": "^2.9.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react": "^7.35.0",
+    "globals": "^15.9.0",
     "typescript": "^5.5.3",
+    "typescript-eslint": "^8.1.0",
     "vite": "^5.4.0"
   }
 }
