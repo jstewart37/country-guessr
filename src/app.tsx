@@ -1,7 +1,7 @@
 import _countries from './assets/countries.json'
 
 import './app.css'
-import { getDailyRandomNumber, seedRand } from './utils/random'
+import { getTodaysCountryIdx } from './utils/random'
 
 import { Country, Guessor } from './guesser'
 import { CONTACT, debug, debugCountry } from './constants'
@@ -31,7 +31,7 @@ export function App() {
     if (debug) {
       return debugCountry != 'random' ? countries.find(country => country['Alpha-2 code'] === debugCountry) : rand(countries)
     } else {
-      return countries.sort()[seedRand(getDailyRandomNumber(), [0, countries.length])]
+      return countries.sort()[getTodaysCountryIdx(0, countries.length - 1)]
     }
   })()
 
